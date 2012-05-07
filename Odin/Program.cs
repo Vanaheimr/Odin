@@ -18,7 +18,13 @@
 #region Usings
 
 using System;
+using System.Linq;
+using System.Collections.Generic;
+
+using de.ahzf.Illias.Commons;
 using de.ahzf.Blueprints;
+using de.ahzf.Blueprints.PropertyGraphs;
+using de.ahzf.Balder;
 
 #endregion
 
@@ -27,68 +33,79 @@ namespace de.ahzf.Vanaheimr.Odin
 
     public class Program
     {
+
+        private const String _isPerson = "isPerson";
+        private const String _likes    = "likes";
+        private const String _Age      = "Age";
         
         public static void Main(String[] args)
         {
 
             var _graph = GraphFactory.CreateGenericPropertyGraph2("My first graph");
 
+
+            // Some graph vertex events...
             _graph.OnVertexAdding += (graph, vertex, vote) =>
-            {
                 Console.WriteLine("I like all vertices!");
-            };
 
             _graph.OnVertexAdding += (graph, vertex, vote) =>
             {
                 if (vertex.Id == "Daniel")
                 {
-                    Console.WriteLine("I'm a Jedi!");
+                    Console.WriteLine("Sorry, please check your karma!");
                     vote.Veto();
                 }
             };
 
 
-            var v1 = _graph.AddVertex("Alice1", "person", v => v.SetProperty("Age", 21));
-            var v2 = _graph.AddVertex("Alice2", "person", v => v.SetProperty("Age", 21));
-            var v3 = _graph.AddVertex("Alice3", "person", v => v.SetProperty("Age", 21));
+            // Add vertices and edges to the graph
+            var Alice  = _graph.AddVertex("Alice",  _isPerson, v => v.SetProperty(_Age, 21));
+            var Bob    = _graph.AddVertex("Bob",    _isPerson, v => v.AddEdge_chainable(_likes, Alice, e => e.SetProperty("intensity", 1.0)).
+                                                                      SetProperty(_Age, 23));
+            var Carol  = _graph.AddVertex("Carol",  _isPerson, v => v.AddEdge_chainable(_likes, Alice).AddEdge_chainable(_likes, Bob).
+                                                                      SetProperty(_Age, 20));
+            var Daniel = _graph.AddVertex("Daniel", _isPerson, v => v.SetProperty(_Age, 30));
+
+            var e1     = _graph.AddEdge(Alice, _likes, Bob);
+
+            Console.WriteLine("Number of vertices added: "    + _graph.NumberOfVertices());
+            Console.WriteLine("Number of edges added: "       + _graph.NumberOfEdges());
+            Console.WriteLine("Number of multi edges added: " + _graph.NumberOfMultiEdges());
+            Console.WriteLine("Number of hyper edges added: " + _graph.NumberOfHyperEdges());
 
 
+            // Who likes someone...
+            _graph.EdgesByLabel("likes").
+                   OutV().
+                   Ids().
+                   Distinct().
+                   ForEach(Name => Console.WriteLine(Name));
 
 
-
-            
-
-            //var marko = _TinkerGraph.AddVertex(1, v => v.SetProperty("name", "marko").SetProperty("age", 29));
-            //var vadas = _TinkerGraph.AddVertex(2, v => v.SetProperty("name", "vadas").SetProperty("age", 27));
-            //var lop = _TinkerGraph.AddVertex(3, v => v.SetProperty("name", "lop").SetProperty("lang", "java"));
-            //var josh = _TinkerGraph.AddVertex(4, v => v.SetProperty("name", "josh").SetProperty("age", 32));
-            //var vader = _TinkerGraph.AddVertex(5, v => v.SetProperty("name", "darth vader"));
-            //var ripple = _TinkerGraph.AddVertex(6, v => v.SetProperty("name", "ripple").SetProperty("lang", "java"));
-            //var peter = _TinkerGraph.AddVertex(7, v => v.SetProperty("name", "peter").SetProperty("age", 35));
-
-            //Console.WriteLine("Number of vertices added: " + _TinkerGraph.Vertices().Count());
-
-            //marko.OnPropertyChanging += (sender, Key, oldValue, newValue, vote) =>
-            //    Console.WriteLine("'" + Key + "' property changing: '" + oldValue + "' -> '" + newValue + "'");
-
-            //marko.OnPropertyChanged += (sender, Key, oldValue, newValue) =>
-            //    Console.WriteLine("'" + Key + "' property changed: '" + oldValue + "' -> '" + newValue + "'");
+            // Who is liked by someone... long version ;)
+            foreach (var Name in _graph.Edges(e => e.Label == _likes).
+                                        InV(v => v.Label == _isPerson).
+                                        Prop("Id").
+                                        Distinct())
+                Console.WriteLine(Name);
 
 
-            //var _DynamicMarko = marko.AsDynamic();
-            //_DynamicMarko.age += 100;
-            //_DynamicMarko.doIt = (Action<String>)((text) => Console.WriteLine("Some infos: " + text + "!"));
-            //_DynamicMarko.doIt(_DynamicMarko.name + "/" + marko.GetProperty("age") + "/");
+            // Add some property events on Carol
+            Carol.OnPropertyChanging += (sender, Key, oldValue, newValue, vote) =>
+                Console.WriteLine(sender.GetProperty("Id") + "'s " + Key + "' property changing: '" + oldValue + "' -> '" + newValue + "'");
+
+            Carol.OnPropertyChanged += (sender, Key, oldValue, newValue) =>
+                Console.WriteLine(sender.GetProperty("Id") + "'s " + Key + " property changed: '" + oldValue + "' -> '" + newValue + "'");
 
 
-            //var e7 = _TinkerGraph.AddEdge(marko, vadas, 7, "knows", e => e.SetProperty("weight", 0.5));
-            //var e8 = _TinkerGraph.AddEdge(marko, josh, 8, "knows", e => e.SetProperty("weight", 1.0));
-            //var e9 = _TinkerGraph.AddEdge(marko, lop, 9, "created", e => e.SetProperty("weight", 0.4));
+            // Let's do some dynamic magics...
+            var _DynamicCarol = Carol.AsDynamic();
+            Console.WriteLine("How old is Carol today? " + _DynamicCarol.Age);
+            _DynamicCarol.Age += 1;
+            Console.WriteLine("How old is Alice in a year? " + _DynamicCarol.Age);
 
-            //var e10 = _TinkerGraph.AddEdge(josh, ripple, 10, "created", e => e.SetProperty("weight", 1.0));
-            //var e11 = _TinkerGraph.AddEdge(josh, lop, 11, "created", e => e.SetProperty("weight", 0.4));
-
-            //var e12 = _TinkerGraph.AddEdge(peter, lop, 12, "created", e => e.SetProperty("weight", 0.2));
+            _DynamicCarol.Likes = (Action<IEnumerable<String>>) ((likes) => Console.WriteLine("Carol likes: " + likes.Aggregate((a,b) => a + ", " + b)));
+            _DynamicCarol.Likes(Carol.OutEdges(_likes).InV().Ids().Distinct());
 
 
         }
