@@ -1,6 +1,24 @@
-[submodule "Depenencies/Graphs/Blueprints.NET"]
-	path = Depenencies/Graphs/Blueprints.NET
+[submodule "../Blueprints.NET"]
+	path = ../Blueprints.NET
 	url = git://github.com/Vanaheimr/Blueprints.NET.git
-[submodule "Depenencies/Illias"]
-	path = Depenencies/Illias
+[submodule "../Illias"]
+	path = ../Illias
 	url = git://github.com/Vanaheimr/Illias.git
+[submodule "../Styx"]
+	path = ../Styx
+	url = git://github.com/Vanaheimr/Styx.git
+[submodule "../Balder"]
+	path = ../Balder
+	url = git://github.com/Vanaheimr/Balder.git
+[submodule "./Bifrost"]
+	path = ./Bifrost
+	url = git://github.com/Vanaheimr/Bifrost.git
+[submodule "../Hermod"]
+	path = ../Hermod
+	url = git://github.com/Vanaheimr/Hermod.git
+[submodule "../Eunomia"]
+	path = ../Eunomia
+	url = git://github.com/Vanaheimr/Eunomia.git
+[submodule "../libs"]
+	path = ../libs
+	url = git://github.com/Vanaheimr/libs.git
