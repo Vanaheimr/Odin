@@ -40,7 +40,7 @@ namespace de.ahzf.Vanaheimr.Odin
 
             _graph.OnVertexAdding += (graph, vertex, vote) =>
             {
-                if (vertex.Id == 5)
+                if (vertex.Id == "Daniel")
                 {
                     Console.WriteLine("I'm a Jedi!");
                     vote.Veto();
@@ -48,9 +48,9 @@ namespace de.ahzf.Vanaheimr.Odin
             };
 
 
-            //graph.AddVertex("Alice", "person", v => v.SetProperty("Age", 21));
-            //graph.AddVertex("Alice", "person", v => v.SetProperty("Age", 21));
-            //graph.AddVertex("Alice", "person", v => v.SetProperty("Age", 21));
+            var v1 = _graph.AddVertex("Alice1", "person", v => v.SetProperty("Age", 21));
+            var v2 = _graph.AddVertex("Alice2", "person", v => v.SetProperty("Age", 21));
+            var v3 = _graph.AddVertex("Alice3", "person", v => v.SetProperty("Age", 21));
 
 
 

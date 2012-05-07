@@ -9,43 +9,41 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Graphs", "Graphs", "{66E78D
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Networking", "Networking", "{F4993D6B-38DD-49C8-A44E-6D0D4B7A5035}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Balder", "..\Balder\Balder\Balder.csproj", "{D2B4E7C7-0524-4DE5-9D62-2DE05682A74D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Balder", "Vanaheimr\Balder\Balder\Balder.csproj", "{D2B4E7C7-0524-4DE5-9D62-2DE05682A74D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blueprints", "..\Blueprints.NET\Blueprints\Blueprints.csproj", "{47FA1E7C-8C47-493D-A371-91A15D53BC95}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blueprints", "Vanaheimr\Blueprints.NET\Blueprints\Blueprints.csproj", "{47FA1E7C-8C47-493D-A371-91A15D53BC95}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PropertyGraphs", "..\Blueprints.NET\PropertyGraphs\PropertyGraphs.csproj", "{562AC94F-60EA-4911-8C62-684F02867783}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PropertyGraphs", "Vanaheimr\Blueprints.NET\PropertyGraphs\PropertyGraphs.csproj", "{562AC94F-60EA-4911-8C62-684F02867783}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JurassicGraphs", "..\Blueprints.NET\JurassicGraphs\JurassicGraphs.csproj", "{B84C5392-CA7E-4F8A-A406-A55E31C1B04A}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlueprintsTests", "..\Blueprints.NET\BlueprintsTests\BlueprintsTests.csproj", "{7F4CE297-4A42-47A8-9A0A-74BA46B09891}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlueprintsTests", "Vanaheimr\Blueprints.NET\BlueprintsTests\BlueprintsTests.csproj", "{7F4CE297-4A42-47A8-9A0A-74BA46B09891}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTests", "UnitTests", "{A57EB780-31A7-4731-9ABD-0771F874D6DE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Graphs", "Graphs", "{4B37B0FD-4C3D-4B7F-8A12-0C0F010E0014}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BalderTests", "..\Balder\BalderTests\BalderTests.csproj", "{4BF95036-986A-47EE-B48E-CF8C2B0E7841}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BalderTests", "Vanaheimr\Balder\BalderTests\BalderTests.csproj", "{4BF95036-986A-47EE-B48E-CF8C2B0E7841}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Commons", "..\Illias\Commons\Commons.csproj", "{16C85DF8-5DE6-4A9F-9FC7-7CA5B0440DF3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Commons", "Vanaheimr\Illias\Commons\Commons.csproj", "{16C85DF8-5DE6-4A9F-9FC7-7CA5B0440DF3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonsTests", "..\Illias\CommonsTests\CommonsTests.csproj", "{02A5F706-A9AC-46BE-A428-EA6F990D8E21}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonsTests", "Vanaheimr\Illias\CommonsTests\CommonsTests.csproj", "{02A5F706-A9AC-46BE-A428-EA6F990D8E21}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Styx", "..\Styx\Styx\Styx.csproj", "{3949790D-8591-4101-9E4D-CE7A758E7409}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Styx", "Vanaheimr\Styx\Styx\Styx.csproj", "{3949790D-8591-4101-9E4D-CE7A758E7409}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StyxTests", "..\Styx\StyxTests\StyxTests.csproj", "{6F2452F5-BF16-4577-9C5A-85C8D7B5289D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StyxTests", "Vanaheimr\Styx\StyxTests\StyxTests.csproj", "{6F2452F5-BF16-4577-9C5A-85C8D7B5289D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bifrost", "..\Bifrost\Bifrost\Bifrost.csproj", "{F6FA73F9-14B4-4033-AAFE-9BFA66BD98F5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bifrost", "Vanaheimr\Bifrost\Bifrost\Bifrost.csproj", "{F6FA73F9-14B4-4033-AAFE-9BFA66BD98F5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BifrostHTTPClient", "..\Bifrost\BifrostHTTPClient\BifrostHTTPClient.csproj", "{EB31E37B-FA75-44FD-9528-171C9E7C3C37}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BifrostHTTPClient", "Vanaheimr\Bifrost\BifrostHTTPClient\BifrostHTTPClient.csproj", "{EB31E37B-FA75-44FD-9528-171C9E7C3C37}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BifrostHTTPServer", "..\Bifrost\BifrostHTTPServer\BifrostHTTPServer.csproj", "{DC46B5EF-ECC5-465E-B1C4-85596343A03F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BifrostHTTPServer", "Vanaheimr\Bifrost\BifrostHTTPServer\BifrostHTTPServer.csproj", "{DC46B5EF-ECC5-465E-B1C4-85596343A03F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BifrostTests", "..\Bifrost\BifrostTests\BifrostTests.csproj", "{3327427D-AFA0-4E8D-8136-424C4AC4C16D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BifrostTests", "Vanaheimr\Bifrost\BifrostTests\BifrostTests.csproj", "{3327427D-AFA0-4E8D-8136-424C4AC4C16D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Networking", "Networking", "{34DD52D4-587B-46A7-B4A8-FE87D13B6750}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hermod", "..\Hermod\Hermod\Hermod.csproj", "{477EFD16-3627-4473-957D-44CA9A9DFB79}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hermod", "Vanaheimr\Hermod\Hermod\Hermod.csproj", "{477EFD16-3627-4473-957D-44CA9A9DFB79}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HermodTests", "..\Hermod\HermodTests\HermodTests.csproj", "{A39FCA19-7716-4A16-8449-D14B7251128A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HermodTests", "Vanaheimr\Hermod\HermodTests\HermodTests.csproj", "{A39FCA19-7716-4A16-8449-D14B7251128A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -97,16 +95,6 @@ Global
 		{562AC94F-60EA-4911-8C62-684F02867783}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{562AC94F-60EA-4911-8C62-684F02867783}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{562AC94F-60EA-4911-8C62-684F02867783}.Release|x86.ActiveCfg = Release|Any CPU
-		{B84C5392-CA7E-4F8A-A406-A55E31C1B04A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B84C5392-CA7E-4F8A-A406-A55E31C1B04A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B84C5392-CA7E-4F8A-A406-A55E31C1B04A}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{B84C5392-CA7E-4F8A-A406-A55E31C1B04A}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{B84C5392-CA7E-4F8A-A406-A55E31C1B04A}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{B84C5392-CA7E-4F8A-A406-A55E31C1B04A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B84C5392-CA7E-4F8A-A406-A55E31C1B04A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B84C5392-CA7E-4F8A-A406-A55E31C1B04A}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{B84C5392-CA7E-4F8A-A406-A55E31C1B04A}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{B84C5392-CA7E-4F8A-A406-A55E31C1B04A}.Release|x86.ActiveCfg = Release|Any CPU
 		{7F4CE297-4A42-47A8-9A0A-74BA46B09891}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7F4CE297-4A42-47A8-9A0A-74BA46B09891}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7F4CE297-4A42-47A8-9A0A-74BA46B09891}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
@@ -239,7 +227,6 @@ Global
 		{D2B4E7C7-0524-4DE5-9D62-2DE05682A74D} = {66E78DFD-ADE9-47E2-9926-DE37A416A79B}
 		{47FA1E7C-8C47-493D-A371-91A15D53BC95} = {66E78DFD-ADE9-47E2-9926-DE37A416A79B}
 		{562AC94F-60EA-4911-8C62-684F02867783} = {66E78DFD-ADE9-47E2-9926-DE37A416A79B}
-		{B84C5392-CA7E-4F8A-A406-A55E31C1B04A} = {66E78DFD-ADE9-47E2-9926-DE37A416A79B}
 		{F6FA73F9-14B4-4033-AAFE-9BFA66BD98F5} = {F4993D6B-38DD-49C8-A44E-6D0D4B7A5035}
 		{EB31E37B-FA75-44FD-9528-171C9E7C3C37} = {F4993D6B-38DD-49C8-A44E-6D0D4B7A5035}
 		{DC46B5EF-ECC5-465E-B1C4-85596343A03F} = {F4993D6B-38DD-49C8-A44E-6D0D4B7A5035}
