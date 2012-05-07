@@ -1,0 +1,6 @@
+[submodule "Depenencies/Graphs/Blueprints.NET"]
+	path = Depenencies/Graphs/Blueprints.NET
+	url = git://github.com/Vanaheimr/Blueprints.NET.git
+[submodule "Depenencies/Illias"]
+	path = Depenencies/Illias
+	url = git://github.com/Vanaheimr/Illias.git
