@@ -22,3 +22,6 @@
 [submodule "Vanaheimr/libs"]
 	path = Vanaheimr/libs
 	url = git://github.com/Vanaheimr/libs.git
+[submodule "Vanaheimr/Jurassic"]
+	path = Vanaheimr/Jurassic
+	url = git://github.com/Vanaheimr/Jurassic.git
