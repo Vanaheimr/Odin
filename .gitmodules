@@ -25,3 +25,6 @@
 [submodule "Vanaheimr/_External/Jurassic"]
 	path = Vanaheimr/_External/Jurassic
 	url = git://github.com/Vanaheimr/Jurassic.git
+[submodule "Vanaheimr/Walkyr"]
+	path = Vanaheimr/Walkyr
+	url = git://github.com/Vanaheimr/Walkyr.git
