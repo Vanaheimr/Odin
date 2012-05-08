@@ -71,6 +71,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeometryTests", "Vanaheimr\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eunomia", "Vanaheimr\Eunomia\Eunomia\Eunomia.csproj", "{1DF1A588-33B1-4168-9487-604FE5680681}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OdinTests", "OdinTests\OdinTests.csproj", "{7DE76F7C-9A00-4574-AD70-ECFAF6E8973E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -341,6 +343,16 @@ Global
 		{1DF1A588-33B1-4168-9487-604FE5680681}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{1DF1A588-33B1-4168-9487-604FE5680681}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{1DF1A588-33B1-4168-9487-604FE5680681}.Release|x86.ActiveCfg = Release|Any CPU
+		{7DE76F7C-9A00-4574-AD70-ECFAF6E8973E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DE76F7C-9A00-4574-AD70-ECFAF6E8973E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DE76F7C-9A00-4574-AD70-ECFAF6E8973E}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{7DE76F7C-9A00-4574-AD70-ECFAF6E8973E}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{7DE76F7C-9A00-4574-AD70-ECFAF6E8973E}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{7DE76F7C-9A00-4574-AD70-ECFAF6E8973E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DE76F7C-9A00-4574-AD70-ECFAF6E8973E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7DE76F7C-9A00-4574-AD70-ECFAF6E8973E}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{7DE76F7C-9A00-4574-AD70-ECFAF6E8973E}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{7DE76F7C-9A00-4574-AD70-ECFAF6E8973E}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
