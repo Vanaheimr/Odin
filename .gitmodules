@@ -28,3 +28,9 @@
 [submodule "Vanaheimr/Walkyr"]
 	path = Vanaheimr/Walkyr
 	url = git://github.com/Vanaheimr/Walkyr.git
+[submodule "Vanaheimr/Aegir"]
+	path = Vanaheimr/Aegir
+	url = git://github.com/Vanaheimr/Aegir.git
+[submodule "Vanaheimr/Loki"]
+	path = Vanaheimr/Loki
+	url = git://github.com/Vanaheimr/Loki.git

@@ -52,7 +52,7 @@ namespace de.ahzf.Vanaheimr.Odin
             {
                 if (vertex.Id == "Daniel")
                 {
-                    Console.WriteLine("Sorry, please check your karma!");
+                    Console.WriteLine("Sorry " + vertex.Id + ", please check your karma!");
                     vote.Veto();
                 }
             };
