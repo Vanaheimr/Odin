@@ -22,9 +22,9 @@ using System.Linq;
 using System.Collections.Generic;
 
 using de.ahzf.Illias.Commons;
-using de.ahzf.Blueprints;
-using de.ahzf.Blueprints.PropertyGraphs;
-using de.ahzf.Balder;
+using de.ahzf.Vanaheimr.Balder;
+using de.ahzf.Vanaheimr.Blueprints;
+using de.ahzf.Vanaheimr.Blueprints.InMemory;
 
 #endregion
 
@@ -53,7 +53,7 @@ namespace de.ahzf.Vanaheimr.Odin
                 if (vertex.Id == "Daniel")
                 {
                     Console.WriteLine("Sorry " + vertex.Id + ", please check your karma!");
-                    vote.Veto();
+                    vote.Deny();
                 }
             };
 
@@ -92,10 +92,10 @@ namespace de.ahzf.Vanaheimr.Odin
 
             // Add some property events on Carol
             Carol.OnPropertyChanging += (sender, Key, oldValue, newValue, vote) =>
-                Console.WriteLine(sender.GetProperty("Id") + "'s " + Key + "' property changing: '" + oldValue + "' -> '" + newValue + "'");
+                Console.WriteLine(sender["Id"] + "'s '" + Key + "' property changing: '" + oldValue + "' -> '" + newValue + "'");
 
             Carol.OnPropertyChanged += (sender, Key, oldValue, newValue) =>
-                Console.WriteLine(sender.GetProperty("Id") + "'s " + Key + " property changed: '" + oldValue + "' -> '" + newValue + "'");
+                Console.WriteLine(sender["Id"] + "'s '" + Key + "' property changed: '" + oldValue + "' -> '" + newValue + "'");
 
 
             // Let's do some dynamic magics...
@@ -107,6 +107,7 @@ namespace de.ahzf.Vanaheimr.Odin
             _DynamicCarol.Likes = (Action<IEnumerable<String>>) ((likes) => Console.WriteLine("Carol likes: " + likes.Aggregate((a,b) => a + ", " + b)));
             _DynamicCarol.Likes(Carol.OutEdges(_likes).InV().Ids().Distinct());
 
+            Console.ReadKey();
 
         }
 

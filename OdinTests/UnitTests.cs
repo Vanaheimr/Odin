@@ -22,9 +22,9 @@ using System.Linq;
 using System.Collections.Generic;
 
 using de.ahzf.Illias.Commons;
-using de.ahzf.Blueprints;
-using de.ahzf.Blueprints.PropertyGraphs;
-using de.ahzf.Balder;
+using de.ahzf.Vanaheimr.Blueprints;
+using de.ahzf.Vanaheimr.Blueprints.InMemory;
+using de.ahzf.Vanaheimr.Balder;
 
 using NUnit.Framework;
 
