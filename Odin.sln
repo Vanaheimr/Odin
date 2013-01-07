@@ -117,6 +117,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GEXFSharp", "Vanaheimr\Walk
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dependencies", "Dependencies", "{DEBB7826-894B-4761-A127-A1E036AD634C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OdinTests", "OdinTests\OdinTests.csproj", "{3761FFBC-812A-4400-A2F5-626E1F8A3EBF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -587,6 +589,16 @@ Global
 		{2EA36174-FB21-474F-A8EB-33C7039B65DA}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{2EA36174-FB21-474F-A8EB-33C7039B65DA}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{2EA36174-FB21-474F-A8EB-33C7039B65DA}.Release|x86.ActiveCfg = Release|Any CPU
+		{3761FFBC-812A-4400-A2F5-626E1F8A3EBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3761FFBC-812A-4400-A2F5-626E1F8A3EBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3761FFBC-812A-4400-A2F5-626E1F8A3EBF}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{3761FFBC-812A-4400-A2F5-626E1F8A3EBF}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{3761FFBC-812A-4400-A2F5-626E1F8A3EBF}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{3761FFBC-812A-4400-A2F5-626E1F8A3EBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3761FFBC-812A-4400-A2F5-626E1F8A3EBF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3761FFBC-812A-4400-A2F5-626E1F8A3EBF}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{3761FFBC-812A-4400-A2F5-626E1F8A3EBF}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{3761FFBC-812A-4400-A2F5-626E1F8A3EBF}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
