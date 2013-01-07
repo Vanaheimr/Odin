@@ -7,9 +7,6 @@
 [submodule "Vanaheimr/Styx"]
 	path = Vanaheimr/Styx
 	url = git://github.com/Vanaheimr/Styx.git
-[submodule "Vanaheimr/Balder"]
-	path = Vanaheimr/Balder
-	url = git://github.com/Vanaheimr/Balder.git
 [submodule "Vanaheimr/Bifrost"]
 	path = Vanaheimr/Bifrost
 	url = git://github.com/Vanaheimr/Bifrost.git

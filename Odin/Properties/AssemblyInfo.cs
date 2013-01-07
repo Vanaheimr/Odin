@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Odin")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("A little helper project to support your first steps with the Vanaheimr graph processing stack.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("ahzf.de")]
 [assembly: AssemblyProduct("Odin")]
-[assembly: AssemblyCopyright("Copyright © Achim 'ahzf' Friedland 2010-2012")]
+[assembly: AssemblyCopyright("Copyright © 2010-2013 Achim 'ahzf' Friedland")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright (c) 2010-2012, Achim 'ahzf' Friedland <achim@graph-database.org>
+ * Copyright (c) 2010-2013, Achim 'ahzf' Friedland <achim@graph-database.org>
  * This file is part of Odin <http://www.github.com/Vanaheimr/Odin>
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -22,6 +22,9 @@ using System.Linq;
 using System.Collections.Generic;
 
 using de.ahzf.Illias.Commons;
+using de.ahzf.Illias.Commons.Votes;
+
+using de.ahzf.Vanaheimr.Styx;
 using de.ahzf.Vanaheimr.Balder;
 using de.ahzf.Vanaheimr.Blueprints;
 using de.ahzf.Vanaheimr.Blueprints.InMemory;
@@ -31,24 +34,31 @@ using de.ahzf.Vanaheimr.Blueprints.InMemory;
 namespace de.ahzf.Vanaheimr.Odin
 {
 
+    /// <summary>
+    /// A little demo program
+    /// </summary>
     public class Program
     {
 
         private const String _isPerson = "isPerson";
         private const String _likes    = "likes";
         private const String _Age      = "Age";
-        
-        public static void Main(String[] args)
+
+        /// <summary>
+        /// Odims main
+        /// </summary>
+        /// <param name="Arguments">Command line arguments</param>
+        public static void Main(String[] Arguments)
         {
 
-            var _graph = GraphFactory.CreateGenericPropertyGraph2("My first graph");
+            var _graph = GraphFactory.CreateGenericPropertyGraph2("My first graph").AsMutable();
 
 
             // Some graph vertex events...
-            _graph.OnVertexAdding += (graph, vertex, vote) =>
+            _graph.OnVertexAddition.OnVoting += (graph, vertex, vote) =>
                 Console.WriteLine("I like all vertices!");
 
-            _graph.OnVertexAdding += (graph, vertex, vote) =>
+            _graph.OnVertexAddition.OnVoting += (graph, vertex, vote) =>
             {
                 if (vertex.Id == "Daniel")
                 {
@@ -85,27 +95,31 @@ namespace de.ahzf.Vanaheimr.Odin
             // Who is liked by someone... long version ;)
             foreach (var Name in _graph.Edges(e => e.Label == _likes).
                                         InV(v => v.Label == _isPerson).
-                                        Prop("Id").
+                                        P("Id").
                                         Distinct())
                 Console.WriteLine(Name);
 
 
             // Add some property events on Carol
-            Carol.OnPropertyChanging += (sender, Key, oldValue, newValue, vote) =>
+            Carol.AsMutable().OnPropertyChanging += (sender, Key, oldValue, newValue, vote) =>
                 Console.WriteLine(sender["Id"] + "'s '" + Key + "' property changing: '" + oldValue + "' -> '" + newValue + "'");
 
-            Carol.OnPropertyChanged += (sender, Key, oldValue, newValue) =>
+            Carol.AsMutable().OnPropertyChanged += (sender, Key, oldValue, newValue) =>
                 Console.WriteLine(sender["Id"] + "'s '" + Key + "' property changed: '" + oldValue + "' -> '" + newValue + "'");
 
 
             // Let's do some dynamic magics...
-            var _DynamicCarol = Carol.AsDynamic();
-            Console.WriteLine("How old is Carol today? " + _DynamicCarol.Age);
-            _DynamicCarol.Age += 1;
-            Console.WriteLine("How old is Alice in a year? " + _DynamicCarol.Age);
+            var dynCarol = Carol.AsDynamic();
+            Console.WriteLine("How old is Carol today? " + dynCarol.Age);
+            dynCarol.Age += 1;
+            Console.WriteLine("How old is Alice in a year? " + dynCarol.Age);
 
-            _DynamicCarol.Likes = (Action<IEnumerable<String>>) ((likes) => Console.WriteLine("Carol likes: " + likes.Aggregate((a,b) => a + ", " + b)));
-            _DynamicCarol.Likes(Carol.OutEdges(_likes).InV().Ids().Distinct());
+
+            // Define a dynamic action
+            dynCarol.Says = (Action<String, IEnumerable<String>>)
+                            ((sentence, obj) => Console.WriteLine("Carol says: " + sentence + " " + obj.Aggregate((a, b) => a + ", " + b)));
+
+            dynCarol.Says("I like", Carol.OutEdges(_likes).InV().Ids().Distinct());
 
             Console.ReadKey();
 
