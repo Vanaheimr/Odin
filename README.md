@@ -13,6 +13,7 @@ or use the more traditional way:
 	
 If you want to update all submodules to their latest version type:	
 	
+    git submodule foreach git checkout master
     git submodule foreach git pull -q origin master
 
 **NOTE**: git submodules are controversial. Nevertheless they can help to keep things simple, when they are simple.
