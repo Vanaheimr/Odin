@@ -19,12 +19,6 @@
 [submodule "Vanaheimr/Eunomia"]
 	path = Vanaheimr/Eunomia
 	url = git://github.com/Vanaheimr/Eunomia.git
-[submodule "Vanaheimr/libs"]
-	path = Vanaheimr/libs
-	url = git://github.com/Vanaheimr/libs.git
-[submodule "Vanaheimr/_External/Jurassic"]
-	path = Vanaheimr/_External/Jurassic
-	url = git://github.com/Vanaheimr/Jurassic.git
 [submodule "Vanaheimr/Walkyr"]
 	path = Vanaheimr/Walkyr
 	url = git://github.com/Vanaheimr/Walkyr.git
@@ -40,3 +34,6 @@
 [submodule "Vanaheimr/Glyphe"]
 	path = Vanaheimr/Glyphe
 	url = git://github.com/Vanaheimr/Glyphe.git
+[submodule "Vanaheimr/Jurassic"]
+	path = Vanaheimr/Jurassic
+	url = git://github.com/Vanaheimr/Jurassic.git
